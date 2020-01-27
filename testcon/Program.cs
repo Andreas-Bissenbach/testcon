@@ -30,7 +30,7 @@ hvor der under disse felter være felterne ”aar”, ”maaned”,
             string[] dsl = new string[] { DSLQuery("10845858", "Vrvirksomhed.cvrNummer"), DSLQuery("10845858", "Vrdeltagerperson.*"), DSLQuery("10845858", "VrproduktionsEnhed.*") };
             //string cvr_str = DSLQuery("30733053", "Vrvirksomhed.cvrNummer");
             string cvr_str = DSLQueryCvr("10845858");
-            string x = await Eclient.ResponseData(cvr_str);
+            string x = await Eclient.ResponseData(dsl[0]);
             Console.WriteLine(x.WithStringInfo());
             Console.ReadKey();
         }
