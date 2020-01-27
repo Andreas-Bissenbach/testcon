@@ -1,0 +1,51 @@
+﻿User Account (Thomas)
+{"at":1542275383700,"businessName":"KIAImport",
+"email":"thomas.k.nielsen@inovo.dk",
+"firstName":"Thomas Kjær",
+"fullName":"Thomas Kjær Nielsen",
+"lastName":"Nielsen",
+"onboardingJourney":"autopilot_campaign_7bd31130-0376-4266-9309-c93768d7dcdc",
+"signup_city":"Aarhus",
+"signup_country":"Denmark",
+"signup_region":"Central Jutland",
+"instanceId":"kiaimport"}
+
+API KEY: c0f7fcbd4bfb453c9c862d7e5ca94dbc
+Contact_id: person_C236662B-791B-482D-A205-C3FBD9F71ACF
+
+Hooks
+{"hooks":[{"hook_id":"hook_contact_added_c035f05090c67b88c95517eee0c2debf0d6a77d3"
+"event":"contact_added"
+"trigger_attributes":{}
+"target_url":"https://hooks.zapier.com/hooks/standard/3255825/6d6ca950298242d1ba850860b1b06823/"
+"created_at":1573819105157}
+{"hook_id":"hook_contact_added_to_list_f31b006d4bd1152d8b82e3052b1859956ece5eba"
+"event":"contact_added_to_list"
+"trigger_attributes":{"dynamic_filter_attribute":"contactlist_22ec1573-b676-4247-b569-41d141da0b74"}
+"target_url":"https://hooks.zapier.com/hooks/standard/3255825/fa1dbd1591d84bfdb3219a0102e98072/"
+"created_at":1573819508104}
+{"hook_id":"hook_contact_removed_from_list_1a3dab8aa4d92b0230ad86acdfb763640a26e4d1"
+"event":"contact_removed_from_list"
+"trigger_attributes":{"dynamic_filter_attribute":"contactlist_22ec1573-b676-4247-b569-41d141da0b74"}
+"target_url":"https://hooks.zapier.com/hooks/standard/3255825/7176e3e8ca6640c6b462d5460cff62bb/"
+"created_at":1573803776042}
+{"hook_id":"hook_contact_removed_from_list_adb5921979989e248ff8013315a292592843bb38"
+"event":"contact_removed_from_list"
+"trigger_attributes":{"dynamic_filter_attribute":"contactlist_22ec1573-b676-4247-b569-41d141da0b74"}
+"target_url":"https://hooks.zapier.com/hooks/standard/3255825/1ee25faa7650454a8b20af343d528946/"
+"created_at":1573819704845}
+{"hook_id":"hook_contact_unsubscribed_84aeea1c96ed18fa6b951c0c803f8a31ab6b0b09"
+"event":"contact_unsubscribed"
+"trigger_attributes":{}
+"target_url":"https://hooks.zapier.com/hooks/standard/3255825/dc574589ac764062aa7c69ce1e1f5630/"
+"created_at":1573819073098}]}
+
+User Account (abp)
+APIKEY = "701f55ccd6c04598bec30d2c50de8e0e";
+WRITEKEY = "qKvkTsaFu12P561ZoZ7rpmk8SJNge1X0";
+Contact_id = person_BB296EBC-5518-4633-81FB-D04599094300
+Zapier AutoPilot Key = 16034cba27c5448eb932123a7f7d8cbd
+
+Segment Destination:
+Write Key: qKvkTsaFu12P561ZoZ7rpmk8SJNge1X0
+API Key: 468616f987864bbd8e8674bdfbdf0aa3f12983d621894df483a9b4c82f5918b6

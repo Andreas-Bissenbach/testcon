@@ -1,0 +1,16 @@
+﻿        public Elastic()
+        {
+            SingleNodeConnectionPool pool = new SingleNodeConnectionPool(base_addr);
+            
+            ConnectionSettings connectionSettings = new ConnectionSettings(pool).RequestTimeout(TimeSpan.FromMinutes(2));
+            connectionSettings.BasicAuthentication("Nellemann_Holding_CVR_I_SKYEN", "b3497fb1-17a8-49e2-8ccd-71491cad8129");
+            connectionSettings.DisableDirectStreaming(true);
+            string pw = "b3497fb1-17a8-49e2-8ccd-71491cad8129";
+            SecureString SecurePW = new SecureString();
+            for (int i = 0; i < pw.ToCharArray().Length; i++)
+                SecurePW.AppendChar(pw.ToCharArray()[i]);
+
+            connectionSettings.ApiKeyAuthentication("Nellemann_Holding_CVR_I_SKYEN",SecurePW);
+            client = new ElasticLowLevelClient(connectionSettings) ?? throw new ArgumentNullException(nameof(client));
+        }
+

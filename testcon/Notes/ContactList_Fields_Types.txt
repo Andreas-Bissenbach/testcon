@@ -1,0 +1,34 @@
+﻿company_priority System.Boolean
+unsubscribed System.Boolean
+api_originated System.Boolean
+
+latestSubscribe System.Int64
+
+contact_id System.String
+Name System.String
+LastName System.String
+FirstName System.String
+Email System.String
+created_at System.String
+updated_at System.String
+Status System.String
+LeadSource System.String
+first_visit_at System.String
+lastTimezone System.String
+lastLocation System.String
+lastEngagement System.String
+MailingPostalCode System.String
+Phone System.String
+Company System.String
+
+custom_fields System.Collections.ArrayList
+lists System.Collections.ArrayList
+mail_received System.Collections.Generic.Dictionary`2[System.String,System.Object]
+mail_opened System.Collections.Generic.Dictionary`2[System.String,System.Object]
+mail_clicked System.Collections.Generic.Dictionary`2[System.String,System.Object]
+anywhere_utm System.Collections.Generic.Dictionary`2[System.String,System.Object]
+anywhere_page_visits System.Collections.Generic.Dictionary`2[System.String,System.Object]
+mail_bounced System.Collections.Generic.Dictionary`2[System.String,System.Object]
+mail_hardbounced System.Collections.Generic.Dictionary`2[System.String,System.Object]
+mail_unsubscribed System.Collections.Generic.Dictionary`2[System.String,System.Object]
+

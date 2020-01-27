@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AutoPilot" Class="TESTDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=web02test;Initial Catalog=AutoPilot;Persist Security Info=True;User ID=sa" SettingsObjectName="testcon.Properties.Settings" SettingsPropertyName="AutoPilotConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contact" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="User_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="company_priority" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MailingPostalCode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="contact_id" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="First_visit_at" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="LeadSource" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Unsubscribed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LatestSubscribe" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastTimezone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LastLocation" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LastEngagement" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Api_originated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Custom_fields" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

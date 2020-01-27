@@ -1,0 +1,50 @@
+﻿		Contact user examples:
+		Mengesgaard@gmail.com
+		casi@nellemann.dk
+        agger_33@hotmail.com
+
+		All Contact data:
+
+        public static async Task GetAnyData()
+        {
+            string response = await CustomResponse("contacts");
+            object AllContacts = Json.Decode<ContactList>(response).Contacts;
+            //object AllContacts = Json.Decode<ContactsList>(response).Contacts;
+            DataRetrieve retrieve = new DataRetrieve();
+
+            string data = retrieve.AnyData(AllContacts, DataRetrieve.Dataformat.Xml);
+            Console.WriteLine(data);
+
+        }
+
+		Specific Xml Values:
+
+		public static string XmlValues(string xml)
+        {
+            var rootElement = XElement.Parse(xml);
+            return rootElement.Element("Node").Value;
+        }
+
+		Delete multiple users:
+
+		public static async Task DeleteTask()
+        {
+            for (int i = 80; i > 3; i--)
+            {
+                string x = await DeleteMultipleContacts($"abp{i}@nellemann.dk");
+                Console.WriteLine(x);
+            }
+        }
+
+        Sådan finder man Data modellens typer:
+        Lav alle typer til public object til at starte med, og gør følgende:
+
+            string x = await client.ResponseData("cvr-permanent/_search");
+            CVRPermanent cvr = Json.Decode<CVRPermanent>(x);
+            Console.WriteLine($"Hits: {cvr.Hits}\r\n_shards: {cvr._shards}");
+            Console.ReadKey();
+
+            Output:
+            Hits: System.Collections.Generic.Dictionary`2[System.String,System.Object]
+            _shards: System.Collections.Generic.Dictionary`2[System.String,System.Object] (Dictionary<string,object>)
+

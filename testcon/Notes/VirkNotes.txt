@@ -1,0 +1,78 @@
+﻿        public static async Task Main()
+        {
+
+            Task task = LoopTask("?size=1&search_type=scan&scroll=10");
+            await task;
+          
+            Console.ReadKey();
+        }
+
+        public static async Task LoopTask(string url)
+        {
+            string x = await Next(url);
+
+
+            string id = x.GetBetween("\"_scroll_id\":\"", "\",");
+
+            for (int i = 0; i < int.MaxValue; i++)
+            {
+                if (i > 0) id = NextID;
+
+                string NextResult = await Next(id);
+                NextID = NextResult.GetBetween("\"_scroll_id\":\"", "\",");
+                
+
+             
+                //string CurrentCVR = NextResult.GetBetween("\"cvrNummer\":", ",");
+
+                //"cvrNummer": 31269741,
+                if (NextResult.Contains("10845858"))
+                {
+                    Console.WriteLine("CVR: 10845858 was FOUND!");
+                    Console.WriteLine("CVR: 10845858 was FOUND!");
+                    Console.WriteLine("CVR: 10845858 was FOUND!");
+                    Console.WriteLine("CVR: 10845858 was FOUND!");
+                    break;
+                }
+             
+                await Vclient.ClearID(id);
+                string f = await TaskFormation(NextResult);
+                Console.WriteLine(f);
+            }
+        }
+
+        public static async Task<string> Next(string id)
+        {
+            string x = await Vclient.Curl($"?scroll={id}&scroll=1m");
+       
+            return x;
+        }
+
+        public static async Task<string> TaskFormation(string json)
+        {
+            StringBuilder sb = new StringBuilder();
+            XmlDocument doc = JsonConvert.DeserializeXmlNode(json, "xml_table");
+
+            for (int i = 0; i < doc.ChildNodes.Count; i++)
+            {
+                string value = doc.ChildNodes.Item(i).InnerText;
+                sb.Append(value);
+            }
+
+            StringReader StringStream = new StringReader(sb.ToString());
+
+
+            return await StringStream.ReadToEndAsync();
+        }
+
+        public static string BodyExample()
+        {
+            return "{\"query\": {\"term\":{\"Vrvirksomhed.enhedstype\":{\"value\":\"virksomhed\"}}}}";
+        }
+
+//Json response example:
+//Byte array til string:
+            var data = PostData.Serializable(searchResponse);
+            byte[] buffer = data.WrittenBytes;
+            string converted = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+
